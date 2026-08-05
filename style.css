@@ -123,24 +123,8 @@ body {
 
 /* hero */
 .hero {
-  position: relative;
   padding: 130px 0 110px;
   text-align: center;
-  background-size: cover;
-  background-position: center 30%;
-  overflow: hidden;
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, #0a0808e6 0%, #0a0808b3 45%, #0a0808f2 100%);
-  z-index: 0;
-}
-
-.hero-inner {
-  position: relative;
-  z-index: 1;
 }
 
 .eyebrow {
