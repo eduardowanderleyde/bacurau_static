@@ -1,14 +1,15 @@
 :root {
-  --bg: #0e0b1a;
-  --bg-alt: #14102450;
-  --panel: #1a1530;
-  --amber: #f2a53c;
-  --amber-soft: #f2a53c22;
-  --text: #f4efe6;
-  --text-dim: #cabfd9;
-  --border: #ffffff14;
+  --bg: #0a0808;
+  --bg-alt: #1a0d0d80;
+  --panel: #1c1010;
+  --amber: #e8402c;
+  --amber-soft: #e8402c22;
+  --amber-glow: #ff5a3c;
+  --text: #f7ece6;
+  --text-dim: #d9beb6;
+  --border: #ff5a3c22;
   --radius: 16px;
-  --font-display: "Fraunces", serif;
+  --font-display: "Permanent Marker", cursive;
   --font-body: "Manrope", sans-serif;
 }
 
@@ -30,19 +31,26 @@ body {
   padding: 0 24px;
 }
 
-/* starry background */
-.stars {
+/* smoldering embers background */
+.embers {
   position: fixed;
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(2px 2px at 20% 30%, #ffffff55 0%, transparent 60%),
-    radial-gradient(2px 2px at 80% 10%, #ffffff44 0%, transparent 60%),
-    radial-gradient(1.5px 1.5px at 60% 70%, #ffffff55 0%, transparent 60%),
-    radial-gradient(1.5px 1.5px at 30% 80%, #ffffff33 0%, transparent 60%),
-    radial-gradient(2px 2px at 90% 60%, #ffffff44 0%, transparent 60%),
-    radial-gradient(1.5px 1.5px at 45% 15%, #ffffff33 0%, transparent 60%),
-    linear-gradient(180deg, #0e0b1a 0%, #150f28 40%, #0e0b1a 100%);
+    radial-gradient(3px 3px at 20% 30%, #ff6a3c66 0%, transparent 60%),
+    radial-gradient(2px 2px at 80% 15%, #ff6a3c55 0%, transparent 60%),
+    radial-gradient(2.5px 2.5px at 60% 75%, #ff6a3c55 0%, transparent 60%),
+    radial-gradient(2px 2px at 30% 85%, #ff6a3c44 0%, transparent 60%),
+    radial-gradient(3px 3px at 90% 55%, #ff6a3c55 0%, transparent 60%),
+    radial-gradient(2px 2px at 45% 12%, #ff6a3c33 0%, transparent 60%),
+    radial-gradient(600px circle at 50% -10%, #4a120a80 0%, transparent 60%),
+    linear-gradient(180deg, #0a0808 0%, #150707 45%, #0a0808 100%);
+}
+
+/* pride accent strip */
+.pride-bar {
+  height: 4px;
+  background: linear-gradient(90deg, #e40303, #ff8c00, #ffed00, #008026, #24408e, #732982);
 }
 
 /* header */
@@ -64,13 +72,17 @@ body {
 
 .logo {
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.3rem;
+  font-weight: 400;
+  font-size: 1.5rem;
   color: var(--text);
   text-decoration: none;
+  letter-spacing: 0.02em;
 }
 
-.logo span { color: var(--amber); }
+.logo span {
+  color: var(--amber-glow);
+  text-shadow: 0 0 8px #ff5a3c99, 0 0 20px #ff5a3c55;
+}
 
 .nav {
   display: flex;
@@ -112,13 +124,16 @@ body {
 
 .hero h1 {
   font-family: var(--font-display);
-  font-weight: 900;
-  font-size: clamp(2.6rem, 7vw, 5rem);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
+  font-weight: 400;
+  font-size: clamp(2.2rem, 6vw, 4.2rem);
+  line-height: 1.15;
+  letter-spacing: 0.01em;
 }
 
-.hero h1 span { color: var(--amber); }
+.hero h1 span {
+  color: var(--amber-glow);
+  text-shadow: 0 0 10px #ff5a3caa, 0 0 30px #ff5a3c66;
+}
 
 .hero-sub {
   max-width: 560px;
@@ -149,13 +164,16 @@ body {
 
 .btn-primary {
   background: var(--amber);
-  color: #1a1206;
+  color: #fff2ee;
+  box-shadow: 0 0 16px #e8402c88, 0 0 40px #e8402c33;
 }
 
 .btn-ghost {
   border: 1px solid var(--border);
   color: var(--text);
 }
+
+.btn-ghost:hover { border-color: var(--amber-glow); }
 
 /* sections */
 .section {
@@ -170,9 +188,10 @@ body {
 
 .section-title {
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 400;
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
   margin-bottom: 24px;
+  color: var(--text);
 }
 
 .lead {
